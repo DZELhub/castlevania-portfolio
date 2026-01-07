@@ -162,3 +162,55 @@ body {
     opacity: 1;
   }
 }
+
+/*! -------------------- ABOUT SECTION ------------------- */
+
+.about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background-color: #0f0f0f;
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(139, 0, 0, 0.08),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.about-content {
+  max-width: 700px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: aboutReveal 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.about-content h2 {
+  font-family: var(--font-title);
+  font-size: 3rem;
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+}
+
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  opacity: 0.85;
+}
+
+@keyframes aboutReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
